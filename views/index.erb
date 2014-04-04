@@ -1,0 +1,12 @@
+<div id="received"></div>
+<script src="http://10.1.10.11:<%= BRIDGE["stream_port"] %>/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://10.1.10.11:<%= BRIDGE["stream_port"] %>');
+  var board = document.querySelector('#received');
+  socket.on('content', function (data) {
+    board.innerHTML = data.message;
+  });
+  socket.on('test', function (data) {
+    $("#as_widget_sidebar").load("http://10.1.10.11:1865/weather");
+  });
+</script>

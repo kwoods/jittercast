@@ -25,7 +25,7 @@ io.sockets.on('connection', function(sock) {
 
   sock.on('huge success', function(){
     msg = '<style type="text/css" media="screen"> .as_widget_sidebar { width:486px; height:805px; position: absolute; top: 138px; left: 1434px; background-color: purple; border: none; } </style><div id="as_widget_sidebar" class="as_widget_sidebar"></div>';
-    io.sockets.emit('news', {message: msg});
+    io.sockets.emit('content', {message: msg});
   });
   
   sock.on('sidebar', function(){
@@ -36,5 +36,5 @@ io.sockets.on('connection', function(sock) {
 });
 
 // setInterval(function(){
-//   io.sockets.emit('news', {message: msg});
+//   io.sockets.emit('content', {message: msg});
 // }, 1000);
