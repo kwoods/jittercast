@@ -6,7 +6,10 @@
   socket.on('content', function (data) {
     board.innerHTML = data.message;
   });
-  socket.on('test', function (data) {
-    $("#as_widget_sidebar").load("http://10.1.10.11:1865/weather");
+  socket.on('sidebar_style', function (data) {
+    $("#as_widget_sidebar").css({ "width":"1920px","height":"805px","top":"0px","left":"0px" });
+  });
+  socket.on('sidebar_load', function (data) {
+    $("#as_widget_sidebar").load("http://10.1.10.11:1865/media_player");
   });
 </script>

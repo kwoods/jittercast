@@ -5,7 +5,8 @@ post to Sinatra:
 
 websocket emit to Node:
 <input type="button" id="huge_success" value="HUGE SUCCESS" />
-<input type="button" id="sidebar_load" value="test" />
+<input type="button" id="sidebar_style" value="sidebar_style" />
+<input type="button" id="sidebar_load" value="sidebar_load" />
 
 <pre id="received"></pre>
 <script src="http://10.1.10.11:<%= BRIDGE["stream_port"] %>/socket.io/socket.io.js"></script>
@@ -14,7 +15,10 @@ websocket emit to Node:
   document.querySelector('#huge_success').addEventListener('click', function(){
     socket.emit('huge success');
   });
+  document.querySelector('#sidebar_style').addEventListener('click', function(){
+    socket.emit('sidebar_style');
+  });
   document.querySelector('#sidebar_load').addEventListener('click', function(){
-    socket.emit('sidebar');
+    socket.emit('sidebar_load');
   });
 </script>
